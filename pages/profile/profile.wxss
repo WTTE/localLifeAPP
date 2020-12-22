@@ -1,0 +1,22 @@
+.avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400rpx;
+  background-color: #3a4861;
+}
+
+.avatar button {
+  width: 220rpx!important;
+  height: 220rpx!important;
+  border-radius: 50%;
+  margin:0px!important;
+  padding:0px!important;
+}
+
+.avatar image {
+  width: 220rpx;
+  height: 220rpx;
+  border-radius: 50%;
+  box-shadow: 0 0 0 10rpx #777f92;
+}

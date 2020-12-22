@@ -1,0 +1,19 @@
+<view>
+  <van-search value="{{ value }}" placeholder="请输入搜索关键词" show-action bind:search="onSearch" bind:cancel="onCancel" bind:change="onChange" />
+  <van-cell-group>
+    <van-cell url="/pages/detail/detail?id={{item.id}}" center wx:for="{{list}}" wx:key="id" icon="{{item.images[0]}}" use-label-slot title="{{item.name}}">
+      <view slot="label" class="label">
+        <text class="shop-tel">电话：{{ item.phone }}</text>
+        <text class="shop-address">地址：{{ item.address }}</text>
+        <text class="shop-time">营业时间：{{ item.businessHours }}</text>
+      </view>
+      <view>
+        <van-rate value="{{ starValue }}" bind:change="onStarChange" size="{{ 10 }}" />
+      </view>
+    </van-cell>
+  </van-cell-group>
+  <view class="loading">
+    <van-loading type="spinner" color="#1989fa" wx:if="{{ hasMore }}" />
+    <view class="loadmore" wx:else>你已经到达我的底线了</view>
+  </view>
+</view>

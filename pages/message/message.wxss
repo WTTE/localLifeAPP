@@ -1,0 +1,12 @@
+.box {
+  padding: 14px;
+}
+.box .van-panel {
+  margin-top: 40rpx;
+  border-radius: 10rpx;
+}
+.box .van-panel .content {
+  display: flex;
+  flex-direction: column;
+  padding: 20rpx;
+}

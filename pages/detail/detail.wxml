@@ -1,0 +1,41 @@
+<wxs module="imageUtil">
+  module.exports = {
+    size:function(url){
+      return url.replace("w.h","100.100")
+    },
+    sizeArr:function(urls){
+      for(var i=0;i<urls.length;i++){
+        urls[i] = urls[i].replace("w.h","400.400")
+      }
+      return urls
+    }
+  }
+</wxs>
+<!-- 顶部轮播图 -->
+<swiper class='slider' autoplay="{{true}}" interval="5000" duration="1000">
+  <block wx:for="{{shop.images}}" wx:key="unique">
+    <swiper-item>
+      <!-- 点击图片显示预览，data-src：传递数据 -->
+      <image bindtap="preview" data-src="{{item}}" src="{{item}}" class="slide-image" mode="widthFix" />
+    </swiper-item>
+  </block>
+</swiper>
+<!-- 内容区域 -->
+<view class='product'>
+  <text class='pro-name'>{{ shop.name }}</text>
+  <text class='pro-phone'>电话: {{ shop.phone }}</text>
+  <text class='pro-address'>地址: {{ shop.address }}</text>
+  <text class='pro-time'>营业时间: {{ shop.businessHours }}</text>
+</view>
+<!-- 评论区域 -->
+<view class="comments">
+  <view class="item" wx:for="{{ shop.comments }}" wx:key="unique">
+    <text class="name">{{ item.name }}</text>
+    <text class="date">{{ item.date }}</text>
+    <text class="rating">{{ item.rating }}</text>
+    <text class="content">{{ item.content }}</text>
+    <view class="images">
+      <image wx:for="{{ item.images }}" wx:key="unique" wx:for-item="v" src='{{ imageUtil.size(v) }}' bindtap="preview" data-src="{{imageUtil.size(v)}}" data-images="{{imageUtil.sizeArr(item.images)}}"></image>
+    </view>
+  </view>
+</view>

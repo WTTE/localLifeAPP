@@ -1,0 +1,23 @@
+<!-- index.wxml -->
+<view>
+  <view class="sliders">
+    <swiper class="" indicator-dots="{{true}}" autoplay="{{true}}" interval="5000" duration="1000" circular="{{true}}">
+      <swiper-item wx:for="{{slides}}" wx:key="id">
+        <image src="{{item.image}}" mode="widthFix"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class="grids">
+    <van-grid column-num="3">
+      <van-grid-item wx:for="{{categories}}" wx:key="id" icon="{{item.icon}}" text="{{item.name}}" url="/pages/list/list?category={{item.id}}&name={{item.name}}"></van-grid-item>
+    </van-grid>
+  </view>
+  <view class="enter">
+    <navigator class='item'>
+      <image src='/assets/images/link-01.png' mode="widthFix"></image>
+    </navigator>
+    <navigator class='item'>
+      <image src='/assets/images/link-02.png' mode="widthFix"></image>
+    </navigator>
+  </view>
+</view>

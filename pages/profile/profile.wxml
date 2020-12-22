@@ -1,0 +1,14 @@
+<view class="avatar">
+  <button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="loginHandle">
+    <image src="{{imgpath}}"></image>
+  </button>
+  <view wx:else>请升级微信版本</view>
+</view>
+<van-cell-group>
+  <van-cell is-link title="个人资料" link-type="navigateTo" url="/pages/dashboard/index" />
+  <van-cell is-link title="我的优惠券" link-type="navigateTo" url="/pages/dashboard/index" />
+</van-cell-group>
+<van-cell-group >
+  <van-cell is-link title="常见问题" link-type="navigateTo" url="/pages/dashboard/index" />
+  <van-cell is-link title="使用条款" link-type="navigateTo" url="/pages/dashboard/index" />
+</van-cell-group>

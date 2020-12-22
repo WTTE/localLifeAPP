@@ -1,0 +1,17 @@
+.sliders swiper {
+  height: 340rpx;
+}
+.sliders swiper image {
+  width: 100%;
+}
+.enter {
+  display: flex;
+}
+.enter .item {
+  flex: 1;
+  box-sizing: border-box;
+  padding: 20rpx;
+}
+.enter .item image {
+  width: 100%;
+}

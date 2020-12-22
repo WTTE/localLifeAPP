@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "van-panel": "/components/vant/panel/index"
+  },
+  "navigationBarTitleText": "消息"
+}
